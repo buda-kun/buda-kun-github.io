@@ -1,0 +1,119 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    overflow: hidden;
+}
+
+.carta:first-child{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 100vh;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.1),
+        rgba(0,0,0,0.1)
+    ) 
+    ,url("imagenes/highschool1.png");
+    background-position: center center;
+    background-size: cover;
+}
+
+
+#boton{
+    position: relative;
+    display: inline-block;
+    padding: 15px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+    background: #262c37;
+    letter-spacing: 2px;
+    font-size: 16px;
+    transition: 0.5s;
+}
+
+
+#boton:hover{
+    color: rgba(255, 255, 255, 1);
+}
+
+#boton span{
+    display: block;
+    position: absolute;
+    background:#b000c0;
+}
+
+#boton span:nth-child(1){
+    left: 0;
+    bottom: 0;
+    width: 2px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s;
+}
+
+#boton:hover span:nth-child(1){
+    transform: scaleY(1);
+    transform-origin: bottom;
+    transition: transform 0.5s;
+}
+
+#boton span:nth-child(2){
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+}
+
+#boton:hover span:nth-child(2){
+    transform: scaleY(1);
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+#boton span:nth-child(3){
+    right: 0;
+    bottom: 0;
+    width: 2px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s;
+}
+
+#boton:hover span:nth-child(3){
+    transform: scaleY(1);
+    transform-origin: bottom;
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}
+
+
+#boton span:nth-child(4){
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}
+
+#boton:hover span:nth-child(4){
+    transform: scaleY(1);
+    transform-origin: bottom;
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}

@@ -1,0 +1,499 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    margin: 0;
+    background: rgb(30,30,30);
+}
+
+input::placeholder{
+    color: white;
+}
+
+/*logo nombre*/
+
+.logo{
+    background-position: 100px 0.3px;
+    background-size: cover;
+    width: 170px;
+    padding: 5px 5px;
+}
+
+
+/*buscador*/
+.box{
+    position: absolute;
+    margin-left: 15%;
+    top: 40px;
+}
+
+
+input.src{
+    padding: 9px 10px 9px 32px;
+    outline: none;
+    font-size: 18px;
+    border-radius: 15px;
+    color: rgb(255, 255, 255);
+    border: 3px solid rgb(56, 56, 56);
+    background: rgb(56, 56, 56) url("imagenes/yumeko.png") no-repeat 40px center;
+    width: 105px;
+    transition: all .5s;
+    background-size: cover;
+    background-position: 7px 0.3px;
+}
+
+input.src:hover{
+    width: 180px;
+    background-color: rgb(0, 0, 0);
+    border-color: rgb(56, 56, 56);
+    box-shadow: 0 0 5px rgba(56, 56, 56);
+}
+/*buscador arriba*/
+
+header .logo{
+    display: flex;
+    flex-direction: column;
+}
+
+
+header{
+    background-color: rgb(30,30,30);
+    padding: 0.02em 0.02em;
+}
+
+/*linea color*/
+.linea{
+    border-top: 5px solid #b000c0;
+    margin-bottom: 40px;
+}
+
+
+
+/*barra header*/
+
+/*slider principal grande*/
+#slider{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    margin-top: 0px;
+}
+#slides{
+    padding: 10px;
+    background: #1b1b1b;
+    position: relative;
+    z-index: 1;
+}
+#overflow{
+    width: 100%;
+    overflow: hidden;
+}
+#slides .inner{
+    transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    width: 400%;
+    line-height: 0;
+    height: 200px;
+}
+#slides .slide{
+    width: 25%;
+    float: left;
+    display: block;
+    height: 100vh;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    margin: auto;
+}
+#slides .slide_1{
+    background: url(imagenes/fate10.png);
+    background-size: cover;
+    background-position: center center;
+}
+#slides .slide_2{
+    background: url(imagenes/kny.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+#slides .slide_3{
+    background: url(imagenes/sao.jpg);
+    background-size: cover;
+    background-position: right right;
+}
+#slide-content{
+    padding: 10px;
+}
+
+
+#overflow .inner{
+    animation: cambio 40s infinite alternate linear;
+}
+
+@keyframes cambio{
+    0%{margin-left: 0;}
+    20%{margin-left: 0;}
+
+    25%{margin-left: -100%;}
+    45%{margin-left: -100%;}
+
+    50%{margin-left: -200%;}
+    70%{margin-left: -200%;}
+
+    75%{margin-left: -300;}
+    100%{margin-left: -300;}
+}
+
+
+/*boton de ver fondo*/
+#boton{
+    position: relative;
+    display: inline-block;
+    padding: 25px 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+    background: #262c37;
+    letter-spacing: 2px;
+    font-size: 16px;
+    transition: 0.5s;
+    margin: 500px ;
+}
+
+
+#boton:hover{
+    color: rgba(255, 255, 255, 1);
+}
+
+#boton span{
+    display: block;
+    position: absolute;
+    background:#b000c0;
+}
+
+#boton span:nth-child(1){
+    left: 0;
+    bottom: 0;
+    width: 2px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s;
+}
+
+#boton:hover span:nth-child(1){
+    transform: scaleY(1);
+    transform-origin: bottom;
+    transition: transform 0.5s;
+}
+
+#boton span:nth-child(2){
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+}
+
+#boton:hover span:nth-child(2){
+    transform: scaleY(1);
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+#boton span:nth-child(3){
+    right: 0;
+    bottom: 0;
+    width: 2px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s;
+}
+
+#boton:hover span:nth-child(3){
+    transform: scaleY(1);
+    transform-origin: bottom;
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}
+
+
+#boton span:nth-child(4){
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}
+
+#boton:hover span:nth-child(4){
+    transform: scaleY(1);
+    transform-origin: bottom;
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}
+/*slider automatico*/
+
+.sliderr{
+    height: 320px;
+    margin: auto;
+    position: relative;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    margin-top: 10px;
+    border-radius: 4px;
+    overflow: hidden;
+
+}
+
+.slide-track{
+    display: flex;
+    width: calc(350px * 10);
+    animation: scroll 40s linear infinite;
+}
+
+@keyframes scroll{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(calc(-350px * 5)); 
+    }
+}
+
+.slidee{
+    height: 200px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    perspective: 130px;
+}
+
+img{
+    width: 90%;
+    height: 170%;
+    transition: transform 1s;
+    border-radius: 4px;
+}
+
+img:hover{
+    transform: translateZ(20px);
+}
+
+/*texto hmv hentai*/
+.hmv{
+    text-align: center;
+    padding: 20px;
+    color: #b000c0;
+    margin-top: 0;
+}
+
+
+/*hentais top*/
+.galeria{
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    background-color: #161616;
+    padding: 10px;
+    margin: 25px 0px;
+}
+
+.galeria h1{
+    text-align: center;
+    padding: 20px;
+    color: #b000c0;
+}
+
+.linea{
+    border-top: 5px solid #b000c0;
+    margin-bottom: 40px;
+}
+
+.contenedor-imagenes{
+    display:flex;
+    width: 100%;
+    margin: auto;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-radius:3px;
+}
+
+.contenedor-imagenes .imagen{
+    width: 32%;
+    position: relative;
+    height: 600px;
+    margin-bottom:5px;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .75)
+}
+.imagen img{
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+}
+
+.overlay{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background:rgba(131, 0, 192, 0.781) ;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: .5s ease;
+}
+
+.overlay h2{
+    color: #fff;
+    font-weight: 300;
+    font-size:30px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.imagen:hover .overlay{
+    height:100%;
+    cursor: pointer;
+}
+
+@media screen and (max-width:1000px){
+    .contenedor-imagenes{
+        width: 95%;
+    }
+}
+
+@media screen and (max-width:700px){
+    .contenedor-imagenes{
+        width: 90%;
+    }
+    .contenedor-imagenes .imagen{
+        width: 48%;
+    }
+}
+
+@media screen and (max-width:450px){
+    h1{
+        font-size:22px;
+    }
+    .contenedor-imagenes{
+        width: 98%;
+    }
+    .contenedor-imagenes .imagen{
+        width: 80%;
+    }
+}
+
+/*fondos de pantalla*/
+#fondoss .containerr{
+    background-color: rgb(30,30,30);
+    color: #b000c0;
+    text-align: center;
+}
+
+#fondoss .containerr{
+    padding: 50px 80px;
+}
+
+#fondoss .containerr h2{
+    margin-top: 0;
+    font-size: 40px;
+}
+
+#fondoss .containerr p{
+    display: none;
+}
+
+#fondoss .carta{
+    padding: 50px;
+    margin: 30px;
+    border-radius: 10px;
+}
+
+#fondoss .carta{
+    background-color: rgba(50, 50, 50, 0.5);
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.carta:first-child{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 90vh;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.1),
+        rgba(0,0,0,0.1)
+    ) 
+    ,url("imagenes/saber.jpg");
+    background-position: center center;
+    background-size: cover;
+}
+
+.carta:nth-child(2){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 90vh;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.1),
+        rgba(0,0,0,0.1)
+    ) 
+    ,url("imagenes/marin.gif");
+    background-position: center center;
+    background-size: cover;
+}
+
+.carta:nth-child(3){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 90vh;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.1),
+        rgba(0,0,0,0.1)
+    ) 
+    ,url("imagenes/codegeass2.jpg");
+    background-position: center center;
+    background-size: cover;
+}
+
+.containerr h3{
+    font-size: 25px;
+}
+
+button{
+    font-size: 1em;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 2px solid rgba(255, 255, 255, 0.99);
+    box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.956);
+    color: white;
+    background-color: #b000c0;
+}
+
+button:hover{
+    background-color: rgb(131, 0, 143);
+}
+
